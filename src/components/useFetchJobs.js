@@ -4,7 +4,8 @@ import axios from 'axios';
 const ACTIONS = {
     MAKE_REQUEST: 'make-request',
     GET_DATA: 'get-data',
-    ERROR: 'error'
+    ERROR: 'error',
+    UPDATE_HAS_NEXT_PAGE: 'update_has_next_page'
 }
 
 const BASE_URL = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json'
@@ -22,12 +23,14 @@ function reducer (state, action) {
         case ACTIONS.ERROR:
         //clean jobs if there's an eorror and return the error obj
             return {...state, loading: false, error: action.payload.error, jobs: []}
+        case ACTIONS.MAKE_REQUEST:
+            return {...state, hasNextPage: action.payload.hasNextPage}
         default:
             return state
     }
 }
 
-//params: job key words, locations
+//params: job key words, location:s
 //everytime change page needs to run the code again
 export default function useFetchJobs(params, page) {
     //const [state, dispatch] = useReducer(reducer, initialState);
@@ -38,11 +41,11 @@ export default function useFetchJobs(params, page) {
     //everytime params, page changes, rerun the code using useEffect hook 
     useEffect(() => {
 
-        const cancelToken = axios.CancelToken.source()
+        const cancelToken1 = axios.CancelToken.source()
 
         dispatch({type: ACTIONS.MAKE_REQUEST})
         axios.get(BASE_URL, {
-            cancelToken: cancelToken.token,
+            cancelToken: cancelToken1.token,
             params: {markdown: true, page:page, ...params}
         }).then( res => {
             dispatch({type: ACTIONS.GET_DATA, payload: {jobs: res.data}})
@@ -51,9 +54,21 @@ export default function useFetchJobs(params, page) {
             dispatch({type: ACTIONS.ERROR, payload: {error: err}})
         })
 
-        return ()=> [
-            cancelToken.cancel()
-        ]
+        const cancelToken2 = axios.CancelToken.source()
+        axios.get(BASE_URL, {
+            cancelToken: cancelToken2.token,
+            params: {markdown: true, page: page + 1, ...params}
+        }).then( res => {
+            dispatch({type: ACTIONS.GET_DATA, payload: {hasNextPage: res.data.length !==0}})
+        }).catch(err => {
+            if (axios.isCancel(err)) return 
+            dispatch({type: ACTIONS.ERROR, payload: {error: err}})
+        })
+
+        return ()=> {
+            cancelToken1.cancel()
+            cancelToken2.cancel()
+        }
 
     }, [params, page])
 

@@ -59,17 +59,16 @@ export default function useFetchJobs(params, page) {
             cancelToken: cancelToken2.token,
             params: {markdown: true, page: page + 1, ...params}
         }).then( res => {
-            dispatch({type: ACTIONS.GET_DATA, payload: {hasNextPage: res.data.length !==0}})
+            dispatch({type: ACTIONS.UPDATE_HAS_NEXT_PAGE, payload: {hasNextPage: res.data.length !==0}})
         }).catch(err => {
             if (axios.isCancel(err)) return 
             dispatch({type: ACTIONS.ERROR, payload: {error: err}})
         })
 
-        return ()=> {
+        return () => {
             cancelToken1.cancel()
             cancelToken2.cancel()
         }
-
     }, [params, page])
 
     return state

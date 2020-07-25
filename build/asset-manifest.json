@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/manongjobs/static/css/main.5f361e03.chunk.css",
+    "main.js": "/manongjobs/static/js/main.fc01109d.chunk.js",
+    "main.js.map": "/manongjobs/static/js/main.fc01109d.chunk.js.map",
+    "runtime-main.js": "/manongjobs/static/js/runtime-main.834e4d0b.js",
+    "runtime-main.js.map": "/manongjobs/static/js/runtime-main.834e4d0b.js.map",
+    "static/js/2.f20ea4cc.chunk.js": "/manongjobs/static/js/2.f20ea4cc.chunk.js",
+    "static/js/2.f20ea4cc.chunk.js.map": "/manongjobs/static/js/2.f20ea4cc.chunk.js.map",
+    "index.html": "/manongjobs/index.html",
+    "precache-manifest.dedb03172933eed231fd5ae36e45bd37.js": "/manongjobs/precache-manifest.dedb03172933eed231fd5ae36e45bd37.js",
+    "service-worker.js": "/manongjobs/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/manongjobs/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.f20ea4cc.chunk.js.LICENSE.txt": "/manongjobs/static/js/2.f20ea4cc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.834e4d0b.js",
+    "static/js/2.f20ea4cc.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.fc01109d.chunk.js"
+  ]
+}

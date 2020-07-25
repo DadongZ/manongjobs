@@ -3,9 +3,8 @@ import { Pagination } from 'react-bootstrap'
 
 export default function JobsPagination({ page, setPage, hasNextPage}) {
     function adjustPage(amount) {
-        setPage(prevPage => prevPage = amount)
+        setPage(prevPage => prevPage + amount)
     }
-
     return (
         <Pagination>
             {page !==1 && <Pagination.Prev onClick={() => adjustPage(-1)}/>}

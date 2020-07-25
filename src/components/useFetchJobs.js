@@ -23,7 +23,7 @@ function reducer (state, action) {
         case ACTIONS.ERROR:
         //clean jobs if there's an eorror and return the error obj
             return {...state, loading: false, error: action.payload.error, jobs: []}
-        case ACTIONS.MAKE_REQUEST:
+        case ACTIONS.UPDATE_HAS_NEXT_PAGE:
             return {...state, hasNextPage: action.payload.hasNextPage}
         default:
             return state

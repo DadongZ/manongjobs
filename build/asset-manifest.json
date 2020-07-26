@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/manongjobs/static/css/main.5f361e03.chunk.css",
-    "main.js": "/manongjobs/static/js/main.3cc117b7.chunk.js",
-    "main.js.map": "/manongjobs/static/js/main.3cc117b7.chunk.js.map",
+    "main.js": "/manongjobs/static/js/main.42bcdae4.chunk.js",
+    "main.js.map": "/manongjobs/static/js/main.42bcdae4.chunk.js.map",
     "runtime-main.js": "/manongjobs/static/js/runtime-main.834e4d0b.js",
     "runtime-main.js.map": "/manongjobs/static/js/runtime-main.834e4d0b.js.map",
     "static/js/2.f20ea4cc.chunk.js": "/manongjobs/static/js/2.f20ea4cc.chunk.js",
     "static/js/2.f20ea4cc.chunk.js.map": "/manongjobs/static/js/2.f20ea4cc.chunk.js.map",
     "index.html": "/manongjobs/index.html",
-    "precache-manifest.2448390d8e55cb087fdb08336a3f1eee.js": "/manongjobs/precache-manifest.2448390d8e55cb087fdb08336a3f1eee.js",
+    "precache-manifest.706f84999e016ddf36952eb772374498.js": "/manongjobs/precache-manifest.706f84999e016ddf36952eb772374498.js",
     "service-worker.js": "/manongjobs/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/manongjobs/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.f20ea4cc.chunk.js.LICENSE.txt": "/manongjobs/static/js/2.f20ea4cc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.834e4d0b.js",
     "static/js/2.f20ea4cc.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.3cc117b7.chunk.js"
+    "static/js/main.42bcdae4.chunk.js"
   ]
 }

@@ -21,7 +21,8 @@ export default function Job({ job }) {
                             <ReactMarkdown source={job.how_to_apply} />
                         </div>
                     </div>
-                    <img className="d-none d-md-block" alt={job.company} src={job.company_logo} />
+                    <img className="d-none d-md-block" alt={job.company} src={job.company_logo}
+                         width="80" height="80"/>
                 </div>
                 <Card.Text>
                     <Button
